@@ -33,7 +33,6 @@ DL網路訓練挑戰目前有以下:
 - [DSD](https://arxiv.org/abs/1607.04381)
 - [Pruning Convolutional Layer](https://arxiv.org/pdf/1611.06440.pdf)
 <br/>
-
 target:提升網絡的訓練效率，進一步改善網絡的泛化性能。<br/>
 result:訓練時扔掉大部分層卻效果不錯，說明冗餘性很多，每一層幹的事情很少，只學一點東西。<br/>
 - [Stochastic Depth](https://arxiv.org/pdf/1603.09382.pdf)
@@ -51,21 +50,36 @@ Cosine similiar
 
 
 ## 3.Parameter調參
-Early Stopping<br/>
-選擇恰當的激勵函數（activation function）<br/>
-隱藏單元和隱層（Hidden Units and Layers）的數量<br/>
-權重初始化 （Weight Initialization）<br/>
-學習率<br/>
-超參數調參：扔掉網格搜索，擁抱隨機搜索<br/>
-學習方法<br/>
-權重的維度保持為 2 的冪<br/>
-無監督預訓練（Unsupervised Pretraining ）<br/>
-Mini-Batch（小批量） 對比隨機學習（Stochastic Learning）<br/>
-打亂訓練樣本<br/>
-使用 Dropout 正則化<br/>
-週期 / 訓練迭代次數<br/>
-可視化<br/>
-使用支持 GPU 和自動微分法 (Automatic Differentiation）的庫<br/>
+### Early Stopping<br/>
+### 選擇恰當的激勵函數（activation function）:<br/>
+多年來，Sigmoid 函數 一直是多數人傾向的選擇。但是，Sigmoid 函數不可避免地存在兩個缺陷：<br/>
+1. 尾部 sigmoids 的飽和，進一步導致梯度消失。 <br/>
+2. 不以 0 為中心（輸出在 0 到 1 之間）。<br/>
+一個更好的替代選擇是 Tanh 函數。數學上來說，Tanh 只是調整、平移過的 Sigmoid 函數：tanh(x) = 2^sigmoid(x) - 1。<br/>
+雖然 Tanh 仍舊存在梯度消失的缺陷，但好消息是：Tanh 以 0 為中心。因此，把 Tanh 作為激勵函數能更快地收斂（converge）。<br/>
+我發現使用 Tanh 通常比 Sigmoid 效果更好。<br/>
+你還可以探索其他選擇，比如 ReLU, SoftSign 等等。對於一些特定任務， 它們能夠改善上述問題。<br/>
+
+### 隱藏單元和隱層（Hidden Units and Layers）的數量<br/>
+保留超出最優數量的隱藏單元，一般是比較保險的做法。這是因為任何正則化方法（ regularization method）都會處理好超出的單元，至少在某種程度上是這樣。<br/>
+在另一方面，保留比最優數量更少的隱藏單元，會導致更高的模型欠擬合（underfitting）機率。<br/>
+另外，當採用無監督預訓練的表示時（unsupervised pre-trained representations，下文會做進一步解釋），隱藏單元的最優數目一般會變得更大。<br/>
+因此，預訓練的表示可能會包含許多不相關信息（對於特定任務）。通過增加隱藏單元的數目，模型會得到所需的靈活性，以在預訓練表示中過濾出最合適的信息。<br/>
+選擇隱層的最優數目比較直接。正如 Yoshua Bengio 在 Quora 中提到的：<br/>
+“你只需不停增加層，直到測試誤差不再減少。”<br/>
+
+### 權重初始化 （Weight Initialization）<br/>
+### 學習率<br/>
+### 超參數調參：扔掉網格搜索，擁抱隨機搜索<br/>
+### 學習方法<br/>
+### 權重的維度保持為 2 的冪<br/>
+### 無監督預訓練（Unsupervised Pretraining ）<br/>
+### Mini-Batch（小批量） 對比隨機學習（Stochastic Learning）<br/>
+### 打亂訓練樣本<br/>
+### 使用 Dropout 正則化<br/>
+### 週期 / 訓練迭代次數<br/>
+### 可視化<br/>
+### 使用支持 GPU 和自動微分法 (Automatic Differentiation）的庫<br/>
 
 
 
