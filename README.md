@@ -32,11 +32,9 @@ DL網路訓練挑戰目前有以下:
 3.訓練時間加長<br/>
 - [DSD](https://arxiv.org/abs/1607.04381)
 - [Pruning Convolutional Layer](https://arxiv.org/pdf/1611.06440.pdf)
-<br/>
+- [Stochastic Depth](https://arxiv.org/pdf/1603.09382.pdf)
 target:提升網絡的訓練效率，進一步改善網絡的泛化性能。<br/>
 result:訓練時扔掉大部分層卻效果不錯，說明冗餘性很多，每一層幹的事情很少，只學一點東西。<br/>
-- [Stochastic Depth](https://arxiv.org/pdf/1603.09382.pdf)
-
 <br/>
 
 (3).選擇可以有利Metric Learning之loss function，Center Loss也已落伍，近期研究基本上都朝向feature normalization之Augular Magrin問題發展:<br/>
