@@ -15,11 +15,22 @@ DL網路訓練挑戰目前有以下:
 
 
 ## 2.Model:模型
+(1).特徵擷取器模型之選擇:
+基本上VGG、GoogleNet已落伍(訓練出來之權重容易過擬合或局部最佳解)，請選擇更深之寬網路結構來當主體模型
+- [ResNet](https://arxiv.org/pdf/1512.03385.pdf)
+- [DenseNet](https://arxiv.org/pdf/1608.06993.pdf)
+- [CondenseNet](https://arxiv.org/pdf/1711.09224.pdf)
 
+(2).特徵擷取器模型之訓練優化技巧:
+除了選擇好的網路結構外，還需透過一些Tricks才縮減網路，使不必要之權重Weight給去除掉:
+- [DSD](https://arxiv.org/abs/1607.04381)
+- [Pruning Convolutional Layer](https://arxiv.org/pdf/1611.06440.pdf)
+- [Stochastic Depth](https://arxiv.org/pdf/1603.09382.pdf)
 
-ResNet
-DenseNet
-CondenseNet
+(3).選擇可以有利Metric Learning之loss function:
+
+- [A-Softmax]
+
 
 ## 3.Parameter調參
 
