@@ -11,7 +11,7 @@ DL網路訓練挑戰目前有以下:
 
 ## 1.Dataset:數據
 不管你是在CV或是NLP領域裡，想要訓練好模型必須要有好的數據，如何得到方法如下:
-(1).獲取越大之數據庫 : MS_celeb_1M, MegaFace。(/br)
+(1).獲取越大之數據庫 : MS_celeb_1M, MegaFace。(br\)
 (2).預處理除去有壞損的訓練樣本，如高度扭曲之圖像、短文字、錯誤之標記，及虛值(null values)的屬性。(/br)
 (3).Data Augmentation（數據擴增）: 以图像为例，水平翻轉Flip、模糊化、shift crop、增加noise。(/br)
 
