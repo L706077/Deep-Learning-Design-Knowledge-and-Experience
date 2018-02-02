@@ -2,7 +2,7 @@
 - [reference 1](https://www.zhihu.com/people/zhou-yi-nan-42/activities)
 - [reference 2](https://www.leiphone.com/news/201701/gOwAU7YFQkJcFkVB.html)
 ---
-DL網路訓練挑戰目前有以下:
+**DL網路訓練挑戰目前有以下:**
 - 1.**Underfitting（欠擬合）**
 - 2.**Overfiting（過擬合）**
 - 3.**實際落地系統的部屬:如何提升效率及減少內存、能量消耗**
