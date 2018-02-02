@@ -16,6 +16,8 @@
 (3).Data Augmentation（數據擴增）: 以图像为例，水平翻轉Flip、模糊化、shift crop、增加noise。<br/>
 <br/>
 
+---
+
 ## 2.Model:模型
 **(1).特徵擷取器模型之選擇:**
 基本上VGG、GoogleNet已落伍(訓練出來之權重容易過擬合或局部最佳解)，請選擇更深之寬網路結構來當主體模型
@@ -55,7 +57,7 @@ Cosine similiar
 必須注意到，無論哪種損失，其目的是為了更好的學習trainning dataset的分佈，如果我們的trainning set與test set的數據分佈一致的話，我們的才能說真正的學到了人臉的分佈。 這裡，我們不去分析各種損失的好壞，而是從數據分佈上分析為什麼要進行Feature Normalization，Weight Normalization以及triplet，以及到底有沒有用。<br/>
 
 
-
+---
 
 ## 3.Parameter調參
 
