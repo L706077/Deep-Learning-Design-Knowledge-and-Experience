@@ -17,14 +17,14 @@ DL網路訓練挑戰目前有以下:
 <br/>
 
 ## 2.Model:模型
-(1).特徵擷取器模型之選擇:
+**(1).特徵擷取器模型之選擇:**
 基本上VGG、GoogleNet已落伍(訓練出來之權重容易過擬合或局部最佳解)，請選擇更深之寬網路結構來當主體模型
 - [ResNet](https://arxiv.org/pdf/1512.03385.pdf)
 - [DenseNet](https://arxiv.org/pdf/1608.06993.pdf)
 - [CondenseNet](https://arxiv.org/pdf/1711.09224.pdf)
 <br/>
 
-(2).特徵擷取器模型之訓練優化技巧:
+**(2).特徵擷取器模型之訓練優化技巧:**
 除了選擇好的網路結構外，還需透過一些Tricks來縮減網路，使不必要之權重Weight給去除掉:<br/>
 例如選擇加深之網路有以下之影響:<br/>
 1.後向傳播梯度消失<br/>
@@ -37,11 +37,11 @@ target:提升網絡的訓練效率，進一步改善網絡的泛化性能。<br/
 result:訓練時扔掉大部分層卻效果不錯，說明冗餘性很多，每一層幹的事情很少，只學一點東西。<br/>
 <br/>
 
-(3).選擇可以有利Metric Learning之loss function，Center Loss也已落伍，近期研究基本上都朝向feature normalization之Augular Magrin問題發展:<br/>
+**(3).選擇可以有利Metric Learning之loss function，Center Loss也已落伍，近期研究基本上都朝向feature normalization之Augular Magrin問題發展:**<br/>
 - [A Softmax Loss]
 <br/>
 
-(4).若是度量學習metric learning問題，則必須而外使用一個分類器來做辦別，可使用:<br/>
+**(4).若是度量學習metric learning問題，則必須而外使用一個分類器來做辦別，可使用:**<br/>
 Joint Baysian
 Cosine similiar
 <br/>
