@@ -46,6 +46,20 @@ Joint Baysian
 Cosine similiar
 <br/>
 
+**(5).若無海量數據但又要訓練精度更高，可從loss function著手:**<br/>
+- 以聚類來分:
+(1).單純聚類: contrasitve loss,center loss,normface, coco loss
+(2).加margin聚類: triplet loss,large margin loss,Asoftmax loss,AM,AAM,InsightFace
+
+- 以距離型態來分:
+(1).歐式距離:contrastive loss,center loss,normface,triplet loss
+(2).餘弦距離:large margin loss,Asoftmax loss,coco loss,AM,AAM,InsightFace
+
+可以看到，目前的主要方向，在從euler距離往往cosine距離發展的同時中間出現了像normface，sphereface，coco loss這些進行了Feature Normalization，Weight Normalization操作的損失，但是這個篇文論，除了sphereface稍等介紹了緣由之外，其餘的更像是一個實驗性的結果，沒有辦法從理論上來說明。<br/>
+必須注意到，無論哪種損失，其目的是為了更好的學習trainning dataset的分佈，如果我們的trainning set與test set的數據分佈一致的話，我們的才能說真正的學到了人臉的分佈。 這裡，我們不去分析各種損失的好壞，而是從數據分佈上分析為什麼要進行Feature Normalization，Weight Normalization以及triplet，以及到底有沒有用。<br/>
+
+
+
 
 ## 3.Parameter調參
 
