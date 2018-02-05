@@ -39,9 +39,9 @@ target:提升網絡的訓練效率，進一步改善網絡的泛化性能。<br/
 result:訓練時扔掉大部分層卻效果不錯，說明冗餘性很多，每一層幹的事情很少，只學一點東西。<br/>
 <br/>
 
-**(3).若是度量學習metric learning問題，則必須而外使用一個分類器來做判別，可使用:**<br/>
-Joint Baysian
-Cosine similiar
+**(3).若是度量學習metric learning問題，則可使用"聯集水平翻轉"後之兩特徵向量來當人臉分布特徵像量，且必須而外使用一個分類器來做判別，可使用:**<br/>
+**Joint Baysian**
+**Cosine distance similiar**
 <br/>
 
 **(4).若無海量數據但又要訓練精度更高，選擇可以有利Metric Learning之loss function，Center Loss也已落伍，近期研究基本上都朝向feature normalization之Augular Magrin問題發展，可從loss function著手:**<br/>
