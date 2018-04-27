@@ -1,6 +1,7 @@
 # Deep-Learning-Design-Knowledge-and-Experience
 - [reference 1](https://www.zhihu.com/people/zhou-yi-nan-42/activities)
 - [reference 2](https://www.leiphone.com/news/201701/gOwAU7YFQkJcFkVB.html)
+- [Caffe trick](https://blog.csdn.net/sinat_26917383/article/details/54232791)
 ---
 **DL網路訓練挑戰目前有以下:**
 - 1.**Underfitting（欠擬合）**
