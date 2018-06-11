@@ -112,5 +112,33 @@ result:訓練時扔掉大部分層卻效果不錯，說明冗餘性很多，每�
 ### 可視化<br/>
 採用可視化庫（visualization library ），在幾個訓練樣例之後、或者周期之間，生成權重柱狀圖。這或許能幫助我們追踪深度學習模型中的一些常見問題，比如梯度消失與梯度爆發（Exploding Gradient）。<br/>
 
+<br/>
+
+---
+
+# Advanced Tricks
+
+## 數據擴增：
+- Color Jittering色彩抖動： 增加圖像之亮度，飽和度，對比度
+- PCA Jittering : 首先按照RGB三個顏色通道計算均值和標準差，再在整個訓練集上計算協方差矩陣，進行特徵分解，得到特徵向量和特徵值，用來做PCA Jittering
+- Random Crop : 在使用caffe訓練時可使用crop_size來隨機選取
+```C++
+//We only do random crop when we do training.  
+    if (phase_ == TRAIN) {  
+      h_off = Rand(datum_height - crop_size + 1);  
+      w_off = Rand(datum_width - crop_size + 1);  
+    } else {  
+      h_off = (datum_height - crop_size) / 2;  
+      w_off = (datum_width - crop_size) / 2;  
+    }  
+  } 
+```
+
+
+## 數據擴增：
+
+
+
+
 
 
